@@ -1,0 +1,12 @@
+{
+  "name": "toy-react",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/qianfengg/Toy-React.git",
+  "author": "qianfengg <fred_gqf0221@163.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.44.0",
+    "webpack-cli": "^3.3.12"
+  }
+}
