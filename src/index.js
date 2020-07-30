@@ -5,12 +5,20 @@ class MyComponent extends Component{
    return (
      <div>
        <span>cool</span>
+       <div>{this.children}</div>
+       <div>{true}</div>
      </div>
    )
  }
 }
 
-const a = <MyComponent id="my-conponent" test="component-test"/>
+// const a = <MyComponent id="my-conponent" test="component-test"/>
+const a = (
+  <MyComponent id="my-conponent" test="component-test">
+    <div>toy react</div>
+    <span>yeah!</span>
+  </MyComponent>
+)
 ToyReact.render(a, document.body)
 
 const b = (
