@@ -1,22 +1,15 @@
-// require('./test')
-// console.log('hello world')
-
-// for (let i of [1,2,3]) {
-//   console.log(i)
-// }
-
-const { ToyReact }  = require('./ToyReact')
+import {ToyReact} from './ToyReact'
 
 class MyComponent {
 
 }
-// let test = <MyComponent test="gqf" desc="fred" />
-// let test = <div test="gqf" desc="fred"></div>
-let test = (<div test="gqf" desc="fred">
-  <span class="haha">Hello</span>
-  <span id="my-span">World</span>
-  <span>!!</span>
-</div>)
+const a = <MyComponent id="my-conponent" test="component-test"/>
 
-console.log(test)
-document.body.appendChild(test)
+
+const b = (
+  <div id="my-div" test="div-test">
+    <span>Hello</span>
+    <span>World</span>
+    <span>!!!</span>
+  </div>
+)
