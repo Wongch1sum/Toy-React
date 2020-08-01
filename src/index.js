@@ -31,11 +31,17 @@ import {ToyReact, Component} from './ToyReact'
 // ToyReact.render(b, document.body)
 
 class Square extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      value: null
+    }
+  }
   render() {
     return (
       <button
         className="square"
-        onClick={() => alert('click')}
+        onClick={() => this.setState({value: 'X'})}
       >
         {this.props.value}
       </button>

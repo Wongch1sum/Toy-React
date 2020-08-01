@@ -3,6 +3,13 @@ class ElementWrapper {
     this.element = document.createElement(type)
   }
   setAttribute (attr, value) {
+    if (attr.match(/^on([\s\S]+)$/)) {
+      // console.log(RegExp.$1)
+      this.element.addEventListener(RegExp.$1.toLowerCase(), value)
+    }
+    if (attr === "className") {
+      attr = 'class'
+    }
     this.element.setAttribute(attr, value)
   }
   appendChild (vchild) {
@@ -36,6 +43,25 @@ export class Component {
   }
   appendChild (vchild) {
     this.children.push(vchild)
+  }
+  setState (state) {
+    let merge = (oldState, newState) => {
+      for (let p in newState) {
+        if (typeof newState[p] === 'object') {
+          if (typeof oldState[p] !== 'object') {
+            oldState[p] = {}
+          }
+          merge(oldState[p], newState[p])
+        } else {
+          oldState[p] = newState[p]
+        }
+      }
+    }
+    if (!this.state && state) {
+      this.state = {}
+    }
+    merge(this.state, state)
+    console.log(this.state)
   }
 }
 
