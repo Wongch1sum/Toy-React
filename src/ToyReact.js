@@ -24,6 +24,7 @@ class TextWrapper {
 export class Component {
   constructor () {
     this.children = []
+    this.props = Object.create(null)
   }
   mountTo (parent) {
     let vdom = this.render()
@@ -31,6 +32,7 @@ export class Component {
   }
   setAttribute (attr, value) {
     this[attr] = value
+    this.props[attr] = value
   }
   appendChild (vchild) {
     this.children.push(vchild)
